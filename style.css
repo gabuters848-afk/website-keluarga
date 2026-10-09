@@ -7,7 +7,6 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 20px;
 }
 
 body {
@@ -17,10 +16,13 @@ body {
     line-height: 1.6;
 }
 
+[hidden] {
+    display: none !important;
+}
+
 /* FOTO UTAMA */
 .hero {
     position: relative;
-    width: 100%;
     height: 600px;
     overflow: hidden;
 }
@@ -39,20 +41,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 25px;
     text-align: center;
-    padding: 30px;
+    color: white;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.08),
-        rgba(0, 0, 0, 0.68)
+        rgba(0,0,0,0.08),
+        rgba(0,0,0,0.7)
     );
-    color: white;
 }
 
-.small-title {
+.small-title,
+.section-label {
+    color: #b89a61;
     font-size: 12px;
-    letter-spacing: 4px;
-    margin-bottom: 15px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
 .hero h1 {
@@ -60,23 +65,35 @@ body {
     font-size: clamp(36px, 6vw, 60px);
     font-weight: normal;
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: 15px;
 }
 
-/* MENU */
+.music-button,
+.back-button {
+    padding: 11px 22px;
+    border: 1px solid #c8a96b;
+    border-radius: 30px;
+    background: white;
+    color: #6e5935;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.music-button {
+    margin-top: 24px;
+}
+
+.music-button:hover,
+.back-button:hover {
+    background: #f3ead7;
+}
+
+/* MENU UTAMA */
 .menu-section {
     max-width: 1100px;
     margin: auto;
-    padding: 90px 25px 75px;
+    padding: 85px 25px;
     text-align: center;
-}
-
-.section-label {
-    color: #a8874a;
-    font-size: 12px;
-    letter-spacing: 3px;
-    font-weight: bold;
-    margin-bottom: 12px;
 }
 
 .menu-section h2,
@@ -88,8 +105,8 @@ body {
 }
 
 .section-description {
-    margin-top: 12px;
     color: #777;
+    margin-top: 12px;
 }
 
 .menu-container {
@@ -104,31 +121,26 @@ body {
     color: inherit;
     text-align: center;
     background: white;
-    padding: 42px 30px;
+    padding: 40px 28px;
     border: 1px solid #e8dfd0;
     border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(70, 55, 35, 0.07);
+    box-shadow: 0 8px 25px #46372310;
     cursor: pointer;
-    transition: transform 0.25s, box-shadow 0.25s;
+    transition: transform .25s, box-shadow .25s;
 }
 
 .menu-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 14px 30px rgba(70, 55, 35, 0.13);
-}
-
-.menu-card:focus-visible {
-    outline: 3px solid #a8874a;
-    outline-offset: 4px;
+    box-shadow: 0 14px 30px #46372320;
 }
 
 .menu-icon {
     width: 58px;
     height: 58px;
-    margin: 0 auto 22px;
+    margin: 0 auto 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     border-radius: 50%;
     background: #f3ead7;
     color: #a8874a;
@@ -159,12 +171,15 @@ body {
     font-weight: bold;
 }
 
-/* BAGIAN KONTEN */
+/* HALAMAN ISI */
 .content-section {
     max-width: 1100px;
     margin: auto;
-    padding: 70px 25px;
-    scroll-margin-top: 20px;
+    padding: 45px 25px 80px;
+}
+
+.back-button {
+    margin-bottom: 35px;
 }
 
 .content-header {
@@ -184,7 +199,7 @@ body {
     border-radius: 18px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 8px 25px rgba(70, 55, 35, 0.06);
+    box-shadow: 0 8px 25px #4637230f;
 }
 
 .event-title {
@@ -209,7 +224,7 @@ body {
     font-size: 14px;
 }
 
-/* FOTO ACARA */
+/* FOTO */
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -218,11 +233,11 @@ body {
 }
 
 .photo-grid img {
-    display: block;
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 12px;
+    display: block;
 }
 
 /* VIDEO */
@@ -233,7 +248,6 @@ body {
 }
 
 .video-grid video {
-    display: block;
     width: 100%;
     max-height: 430px;
     border-radius: 12px;
@@ -248,18 +262,12 @@ body {
 }
 
 .kenangan-gallery img {
-    display: block;
     width: 100%;
     height: 240px;
     object-fit: cover;
     border-radius: 12px;
     background: #e9dfce;
-    cursor: pointer;
-    transition: transform 0.25s;
-}
-
-.kenangan-gallery img:hover {
-    transform: scale(1.025);
+    display: block;
 }
 
 .kenangan-video-title {
@@ -302,29 +310,21 @@ footer span {
     }
 
     .menu-section {
-        padding: 65px 18px;
+        padding: 60px 18px;
     }
 
-    .menu-container {
+    .menu-container,
+    .photo-grid,
+    .video-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .menu-card {
-        padding: 32px 22px;
     }
 
     .content-section {
-        padding: 50px 16px;
+        padding: 35px 16px 60px;
     }
 
     .event-card {
         padding: 18px;
-    }
-
-    .photo-grid,
-    .video-grid {
-        grid-template-columns: 1fr;
     }
 
     .photo-grid img {
@@ -338,17 +338,5 @@ footer span {
 
     .kenangan-gallery img {
         height: 190px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: 0.01ms !important;
     }
 }
