@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kenangan Keluarga</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MUSIK
+    ========================== -->
+
+    <audio id="musik" autoplay loop>
+        <source src="lagu/lagu.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         FOTO UTAMA
+    ========================== -->
+
+    <section class="hero">
+
+        <img
+            src="fotokeluarga.jpeg"
+            alt="Foto Keluarga Besar"
+        >
+
+        <div class="hero-overlay">
+
+            <p class="small-title">
+                WEBSITE KELUARGA
+            </p>
+
+            <h1>
+                Kenangan Keluarga
+            </h1>
+
+            <p>
+                Kisah, kebersamaan, dan momen yang selalu kami kenang.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MENU UTAMA
+    ========================== -->
+
+    <main>
+
+        <section class="menu-section">
+
+            <p class="section-label">
+                KUMPULAN CERITA
+            </p>
+
+            <h2>
+                Jelajahi Kenangan
+            </h2>
+
+            <p class="section-description">
+                Pilih bagian yang ingin kamu lihat.
+            </p>
+
+
+            <div class="menu-container">
+
+                <!-- ACARA KELUARGA -->
+
+                <div
+                    class="menu-card"
+                    onclick="bukaAcara()"
+                >
+
+                    <div class="menu-icon">
+                        ✦
+                    </div>
+
+                    <h3>
+                        Acara Keluarga
+                    </h3>
+
+                    <p>
+                        Berbagai kegiatan dan acara besar
+                        yang kami abadikan bersama.
+                    </p>
+
+                    <span class="lihat">
+                        Lihat Acara →
+                    </span>
+
+                </div>
+
+
+                <!-- KENANGAN KELUARGA -->
+
+                <div
+                    class="menu-card"
+                    onclick="bukaKenangan()"
+                >
+
+                    <div class="menu-icon">
+                        ♡
+                    </div>
+
+                    <h3>
+                        Kenangan Keluarga
+                    </h3>
+
+                    <p>
+                        Foto dan video kenangan lama
+                        dari berbagai momen keluarga.
+                    </p>
+
+                    <span class="lihat">
+                        Lihat Kenangan →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACARA KELUARGA
+        ========================== -->
+
+        <section
+            id="acara"
+            class="content-section"
+        >
+
+            <div class="content-header">
+
+                <p class="section-label">
+                    ACARA KELUARGA
+                </p>
+
+                <h2>
+                    Kegiatan Bersama
+                </h2>
+
+                <p>
+                    Momen-momen yang kami abadikan
+                    dalam foto dan video.
+                </p>
+
+            </div>
+
+
+            <!-- =====================
+                 WISUDA
+            ====================== -->
+
+            <div class="event-card">
+
+                <div class="event-title">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Wisuda
+                        </h3>
+
+                        <p>
+                            Foto dan video acara wisuda
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+                    <img
+                        src="kegiatan/wisuda (1).jpeg"
+                        alt="Foto Wisuda"
+                    >
+
+                </div>
+
+
+                <div class="video-grid">
+
+                    <video controls preload="metadata">
+
+                        <source
+                            src="kegiatan/wisuda (1).mp4"
+                            type="video/mp4"
+                        >
+
+                        Browser tidak mendukung video.
+
+                    </video>
+
+
+                    <video controls preload="metadata">
+
+                        <source
+                            src="kegiatan/wisuda (2).mp4"
+                            type="video/mp4"
+                        >
+
+                        Browser tidak mendukung video.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 BUKA BERSAMA
+            ====================== -->
+
+            <div class="event-card">
+
+                <div class="event-title">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Buka Bersama
+                        </h3>
+
+                        <p>
+                            Momen kebersamaan keluarga
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+                    <img
+                        src="kegiatan/bukber (1).jpeg"
+                        alt="Buka Bersama"
+                    >
+
+                    <img
+                        src="kegiatan/bukber (2).jpeg"
+                        alt="Buka Bersama"
+                    >
+
+                </div>
+
+
+                <div class="video-grid">
+
+                    <video controls preload="metadata">
+
+                        <source
+                            src="kegiatan/bukber (1).mp4"
+                            type="video/mp4"
+                        >
+
+                        Browser tidak mendukung video.
+
+                    </video>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             KENANGAN KELUARGA
+        ========================== -->
+
+        <section
+            id="kenangan"
+            class="content-section"
+        >
+
+            <div class="content-header">
+
+                <p class="section-label">
+                    KENANGAN KELUARGA
+                </p>
+
+                <h2>
+                    Kenangan Lama
+                </h2>
+
+                <p>
+                    Kumpulan foto dan video dari berbagai
+                    momen bersama keluarga.
+                </p>
+
+            </div>
+
+
+            <!-- FOTO KENANGAN -->
+
+            <div
+                id="galeri-kenangan"
+                class="kenangan-gallery"
+            ></div>
+
+
+            <!-- VIDEO KENANGAN -->
+
+            <div class="kenangan-video-title">
+
+                <p class="section-label">
+                    VIDEO KENANGAN
+                </p>
+
+                <h3>
+                    Momen yang Bisa Diputar Kembali
+                </h3>
+
+            </div>
+
+
+            <div
+                id="video-kenangan"
+                class="video-grid"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Kenangan Keluarga
+        </p>
+
+        <span>
+            Setiap momen memiliki cerita.
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
