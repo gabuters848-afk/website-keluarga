@@ -1,64 +1,68 @@
 
 "use strict";
 
-// ==============================
 // MUSIK
-// ==============================
-
 const musik = document.getElementById("musik");
+const tombolMusik = document.getElementById("tombol-musik");
 
-function putarMusik() {
-    if (!musik) return;
-
-    musik.play().catch(() => {
-        // Browser dapat memblokir autoplay bersuara.
-        // Musik akan dicoba kembali saat pengunjung berinteraksi.
-    });
+async function toggleMusik() {
+    try {
+        if (musik.paused) {
+            await musik.play();
+            tombolMusik.textContent = "❚❚ Jeda Musik";
+        } else {
+            musik.pause();
+            tombolMusik.textContent = "▶ Putar Musik";
+        }
+    } catch (error) {
+        tombolMusik.textContent = "▶ Coba Putar Musik";
+        console.error("Musik gagal diputar:", error);
+    }
 }
 
-// Mencoba autoplay saat halaman dibuka.
-putarMusik();
-
-// Jika autoplay diblokir, coba lagi saat interaksi pertama.
-function mulaiMusikSekali() {
-    putarMusik();
-
-    document.removeEventListener("click", mulaiMusikSekali);
-    document.removeEventListener("keydown", mulaiMusikSekali);
-    document.removeEventListener("touchstart", mulaiMusikSekali);
-}
-
-document.addEventListener("click", mulaiMusikSekali);
-document.addEventListener("keydown", mulaiMusikSekali);
-document.addEventListener("touchstart", mulaiMusikSekali, {
-    passive: true
+// Coba autoplay; browser mungkin memblokirnya.
+window.addEventListener("load", async () => {
+    try {
+        await musik.play();
+        tombolMusik.textContent = "❚❚ Jeda Musik";
+    } catch (error) {
+        tombolMusik.textContent = "▶ Putar Musik";
+    }
 });
 
 
-// ==============================
-// NAVIGASI MENU
-// ==============================
+// NAVIGASI
+const menuUtama = document.getElementById("menu-utama");
+const bagianAcara = document.getElementById("acara");
+const bagianKenangan = document.getElementById("kenangan");
 
 function bukaAcara() {
-    document.getElementById("acara").scrollIntoView({
-        behavior: "smooth"
-    });
+    menuUtama.hidden = true;
+    bagianKenangan.hidden = true;
+    bagianAcara.hidden = false;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function bukaKenangan() {
-    document.getElementById("kenangan").scrollIntoView({
-        behavior: "smooth"
-    });
+    menuUtama.hidden = true;
+    bagianAcara.hidden = true;
+    bagianKenangan.hidden = false;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function kembaliKeMenu() {
+    bagianAcara.hidden = true;
+    bagianKenangan.hidden = true;
+    menuUtama.hidden = false;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 
-// ==============================
 // GALERI FOTO KENANGAN
-// Semua file ada di folder utama.
-// ==============================
-
-const galeriKenangan =
-    document.getElementById("galeri-kenangan");
+const galeriKenangan = document.getElementById("galeri-kenangan");
 
 for (let i = 1; i <= 35; i++) {
     const foto = document.createElement("img");
@@ -67,21 +71,14 @@ for (let i = 1; i <= 35; i++) {
     foto.alt = `Kenangan keluarga ${i}`;
     foto.loading = "lazy";
 
-    // Sembunyikan gambar jika file tidak ditemukan.
-    foto.addEventListener("error", function () {
-        this.remove();
-    }, { once: true });
+    foto.addEventListener("error", () => foto.remove(), { once: true });
 
     galeriKenangan.appendChild(foto);
 }
 
 
-// ==============================
 // VIDEO KENANGAN
-// ==============================
-
-const videoKenangan =
-    document.getElementById("video-kenangan");
+const videoKenangan = document.getElementById("video-kenangan");
 
 for (let i = 1; i <= 2; i++) {
     const video = document.createElement("video");
@@ -94,6 +91,5 @@ for (let i = 1; i <= 2; i++) {
     source.type = "video/mp4";
 
     video.appendChild(source);
-
     videoKenangan.appendChild(video);
 }
