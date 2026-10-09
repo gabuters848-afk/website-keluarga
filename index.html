@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#e5eee2">
     <title>Kenangan Keluarga</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,113 +15,146 @@
     </audio>
 
     <header class="hero">
-        <img src="fotokeluarga.jpeg" alt="Foto Keluarga Besar">
+        <img class="foto-utama" src="fotokeluarga.jpeg"
+             alt="Foto keluarga besar">
 
         <div class="hero-overlay">
-            <p class="small-title">WEBSITE KELUARGA</p>
+            <span class="eyebrow">OUR FAMILY • OUR STORY</span>
             <h1>Kenangan Keluarga</h1>
-            <p>Kisah, kebersamaan, dan momen yang selalu kami kenang.</p>
-            <button id="tombol-musik" class="music-button"
-                onclick="toggleMusik()">▶ Putar Musik</button>
+            <p>Bersama kita menciptakan cerita, bersama kita menyimpan kenangan.</p>
+
+            <button id="tombol-musik" class="music-button" type="button">
+                ▶ Putar Musik
+            </button>
+
+            <span class="scroll-note">SCROLL UNTUK MENJELAJAHI ↓</span>
         </div>
+        <div class="hero-decoration decoration-one">✿</div>
+        <div class="hero-decoration decoration-two">♡</div>
     </header>
 
     <main>
-        <!-- MENU UTAMA -->
         <section id="menu-utama" class="menu-section">
-            <p class="section-label">KUMPULAN CERITA</p>
-            <h2>Jelajahi Kenangan</h2>
-            <p class="section-description">
-                Pilih cerita keluarga yang ingin kamu lihat.
-            </p>
+            <div class="section-heading">
+                <span class="eyebrow">CERITA KITA</span>
+                <h2>Setiap Momen Berarti</h2>
+                <p>Dua tempat untuk menyimpan cerita dan kebersamaan keluarga.</p>
+            </div>
 
             <div class="menu-container">
-                <button class="menu-card" onclick="bukaAcara()">
-                    <span class="menu-icon">✦</span>
+                <button class="menu-card card-acara"
+                        type="button" onclick="bukaAcara()">
+                    <div class="card-symbol">✦</div>
+                    <span class="card-number">01 / KEGIATAN</span>
                     <h3>Acara Keluarga</h3>
-                    <p>Foto dan video acara besar serta kegiatan bersama.</p>
-                    <span class="lihat">Lihat Acara →</span>
+                    <p>Wisuda, buka bersama, dan berbagai momen saat kita berkumpul.</p>
+                    <span class="card-link">Jelajahi Acara <b>↗</b></span>
                 </button>
 
-                <button class="menu-card" onclick="bukaKenangan()">
-                    <span class="menu-icon">♡</span>
+                <button class="menu-card card-kenangan"
+                        type="button" onclick="bukaKenangan()">
+                    <div class="card-symbol">♡</div>
+                    <span class="card-number">02 / ALBUM</span>
                     <h3>Kenangan Keluarga</h3>
-                    <p>Foto dan video kenangan dari masa ke masa.</p>
-                    <span class="lihat">Lihat Kenangan →</span>
+                    <p>Foto dan video dari masa ke masa yang selalu berharga.</p>
+                    <span class="card-link">Buka Album <b>↗</b></span>
                 </button>
             </div>
+
+            <div class="quote">
+                <span>“</span>
+                <p>Keluarga bukan hanya tentang tempat kita pulang, tetapi tentang kenangan yang kita bawa sepanjang hidup.</p>
+            </div>
         </section>
 
-        <!-- HALAMAN ACARA -->
         <section id="acara" class="content-section" hidden>
-            <button class="back-button" onclick="kembaliKeMenu()">← Kembali</button>
+            <button class="back-button" type="button" onclick="kembaliKeMenu()">
+                ← Kembali ke Beranda
+            </button>
 
-            <div class="content-header">
-                <p class="section-label">KUMPULAN KEGIATAN</p>
+            <div class="content-heading">
+                <span class="eyebrow">MOMEN KEBERSAMAAN</span>
                 <h2>Acara Keluarga</h2>
-                <p>Setiap pertemuan menyimpan cerita.</p>
+                <p>Keseruan dan kebahagiaan yang terekam dalam setiap kegiatan.</p>
             </div>
 
             <article class="event-card">
-                <div class="event-title">
-                    <span>01</span>
+                <div class="event-heading">
+                    <span class="event-number">01</span>
                     <div>
+                        <span class="eyebrow">PENCAPAIAN & KEBANGGAAN</span>
                         <h3>Wisuda</h3>
-                        <p>Momen wisuda bersama keluarga.</p>
+                        <p>Momen bahagia merayakan sebuah pencapaian bersama keluarga.</p>
                     </div>
                 </div>
 
                 <div class="photo-grid">
-                    <img src="wisuda (1).jpeg" alt="Foto wisuda" loading="lazy">
+                    <img src="wisuda (1).jpeg" alt="Foto acara wisuda" loading="lazy">
                 </div>
 
+                <h4 class="media-heading">Video Wisuda</h4>
                 <div class="video-grid">
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="wisuda (1).mp4" type="video/mp4">
+                        Browser tidak mendukung video ini.
                     </video>
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="wisuda (2).mp4" type="video/mp4">
+                        Browser tidak mendukung video ini.
                     </video>
                 </div>
             </article>
 
             <article class="event-card">
-                <div class="event-title">
-                    <span>02</span>
+                <div class="event-heading">
+                    <span class="event-number">02</span>
                     <div>
+                        <span class="eyebrow">HANGATNYA KEBERSAMAAN</span>
                         <h3>Buka Bersama</h3>
-                        <p>Momen kebersamaan keluarga.</p>
+                        <p>Berbagi cerita, makanan, dan kebahagiaan di satu meja.</p>
                     </div>
                 </div>
 
                 <div class="photo-grid">
-                    <img src="bukber (1).jpeg" alt="Buka bersama" loading="lazy">
-                    <img src="bukber (2).jpeg" alt="Buka bersama" loading="lazy">
+                    <img src="bukber (1).jpeg" alt="Foto buka bersama pertama" loading="lazy">
+                    <img src="bukber (2).jpeg" alt="Foto buka bersama kedua" loading="lazy">
                 </div>
 
+                <h4 class="media-heading">Video Buka Bersama</h4>
                 <div class="video-grid">
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="bukber (1).mp4" type="video/mp4">
+                        Browser tidak mendukung video ini.
                     </video>
                 </div>
             </article>
         </section>
 
-        <!-- HALAMAN KENANGAN -->
         <section id="kenangan" class="content-section" hidden>
-            <button class="back-button" onclick="kembaliKeMenu()">← Kembali</button>
+            <button class="back-button" type="button" onclick="kembaliKeMenu()">
+                ← Kembali ke Beranda
+            </button>
 
-            <div class="content-header">
-                <p class="section-label">ALBUM KELUARGA</p>
+            <div class="content-heading">
+                <span class="eyebrow">ALBUM PENUH CERITA</span>
                 <h2>Kenangan Keluarga</h2>
-                <p>Kumpulan foto dan video dari berbagai masa.</p>
+                <p>Setiap foto menyimpan cerita yang tidak ingin kita lupakan.</p>
+            </div>
+
+            <div class="gallery-note">
+                <span>✿</span>
+                <div>
+                    <strong>Album Foto</strong>
+                    <p>Klik foto mana saja untuk melihatnya lebih besar.</p>
+                </div>
             </div>
 
             <div id="galeri-kenangan" class="kenangan-gallery"></div>
 
-            <div class="kenangan-video-title">
-                <p class="section-label">VIDEO KENANGAN</p>
-                <h3>Momen yang Bisa Diputar Kembali</h3>
+            <div class="content-heading video-heading">
+                <span class="eyebrow">PUTAR KEMBALI CERITANYA</span>
+                <h2>Video Kenangan</h2>
+                <p>Momen sederhana yang selalu menyenangkan untuk dikenang.</p>
             </div>
 
             <div id="video-kenangan" class="video-grid"></div>
@@ -128,9 +162,19 @@
     </main>
 
     <footer>
-        <p>Kenangan Keluarga</p>
-        <span>Setiap momen memiliki cerita.</span>
+        <div class="footer-flower">✿</div>
+        <h2>Our Family, Our Memories</h2>
+        <p>Jauh atau dekat, keluarga selalu punya tempat di hati.</p>
+        <span class="footer-bottom">DIBUAT DENGAN ♡ UNTUK KELUARGA</span>
     </footer>
+
+    <div id="pemutar-foto" class="pemutar-foto" hidden
+         role="dialog" aria-modal="true" aria-label="Foto ukuran besar">
+        <button id="tutup-foto" class="tutup-foto"
+                type="button" aria-label="Tutup foto">×</button>
+        <img id="foto-besar" src="" alt="Foto keluarga ukuran besar">
+        <p class="petunjuk-foto">Klik area gelap atau tekan Esc untuk menutup</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
